@@ -26,6 +26,7 @@ const App = {
           // 请求成功的回调函数
           console.log("设置选项已保存！");
           console.log(datas.myObject);
+          alert("保存成功，现在可以使用查询功能了")
         },
         error: function (error) {
           // 请求失败的回调函数
@@ -57,7 +58,7 @@ const App = {
         },
       });
     };
-    
+
     //简单的测试
     const getTest = () => {
       jQuery.ajax({
@@ -79,16 +80,29 @@ const App = {
       });
     };
 
-    return { datas, postData, getXh, getTest,value };
+    return { datas, postData, getXh, getTest, value };
   },
   template: `
-  令牌：<input type="text" v-model="datas.myObject.key">
-  查字：<input type="text" v-model="datas.myObject.query">
+  令牌：<input type="text" placeholder="appCode" v-model="datas.myObject.key" style="
+  width: 300px;
+">
+<br/>
+  请填写您申请的令牌，申请地址：<a href="https://doc.topthink.com/think-api/APIdiaoyong.html" target="_blank">点击申请</a>
+  <br/>
+  
+  <div v-if="resule">
   <h3>返回的数据</h3>
   {{value}}
-  <hr/><button class="button button-primary" @click="postData">保存选项</button>
-  <hr/><button class="button button-primary" @click="getXh">获取返回值</button>
+  </div>
+  
+  <!--
+  查字：<input type="text" v-model="datas.myObject.query">
   <hr/><button class="button button-primary" @click="getTest">测试获取</button>
+  <hr/><button class="button button-primary" @click="getXh">查询</button>
+  -->
+  <hr/><button class="button button-primary" @click="postData">保存选项</button>
+  
+
   `,
 };
 

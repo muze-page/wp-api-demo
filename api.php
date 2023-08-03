@@ -2,7 +2,10 @@
 
 /**
  * Plugin Name:       测试开发API接口功能
- * Description:       测试选项
+ * Plugin URI:        https://www.npc.ink
+ * Description:       测试ThinkAPI 服务
+ * Author:            Npcink
+ * AuthorURI:         https://www.npc.ink
  * Requires at least: 6.1
  * Requires PHP:      7.0
  * Version:           0.1.0
@@ -33,11 +36,11 @@ function api_displays()
 {
 
 ?>
-    <button id="get_click">获取值</button>
-    <button id="post_click">更新值</button>
-    <script src="https://unpkg.com/vue@3.3.4"></script>
-    <div id="api"></div>
-    <div id="apps"></div>
+    <div class="wrap">
+        <script src="https://unpkg.com/vue@3.3.4"></script>
+        <div id="api"></div>
+        <div id="apps"></div>
+    </div>
 <?
 }
 
