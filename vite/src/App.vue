@@ -1,12 +1,10 @@
 <script setup>
 import HelloWorld from "./components/HelloWorld.vue";
+import Hycd from "./components/hycd.vue";
 </script>
 
 <template>
-  <h3>请选择下列工具</h3>
-  <router-link to="/hycd">汉字词典</router-link>
-  <!-- 路由匹配到的组件将渲染在这里 -->
-  <router-view></router-view>
+  <Hycd></Hycd>
 </template>
 
 <style scoped>

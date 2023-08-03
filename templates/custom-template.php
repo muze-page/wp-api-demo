@@ -6,9 +6,6 @@ get_header();
 
 ?>
 
-<h2>111</h2>
-666888
-
 <div id="apps"></div>
 
 <?php

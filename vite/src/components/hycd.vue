@@ -32,15 +32,27 @@ const queryDo = () => {
 </script>
 
 <template>
-  <router-link to="/">返回</router-link>
-  <h3>请输入需要查询的词</h3>
+  <div class="hycd">
+    <h3>请输入需要查询的词</h3>
 
-  <input type="text" v-model="queryContent" />
+    <input type="text" v-model="queryContent" />
 
-  <br />
-  <button @click="queryDo">查询</button>
-  <h3>返回的结果</h3>
-  {{ resule }}
+    <br />
+    <button @click="queryDo">查询</button>
+    <br />
+    <div v-if="resule">
+      <h3>返回的结果</h3>
+      <br />
+      {{ resule }}
+    </div>
+  </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.hycd {
+  text-align: center;
+}
+.hycd  input {
+  margin: 2em 0;
+}
+</style>
