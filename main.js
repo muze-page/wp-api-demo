@@ -26,7 +26,7 @@ const App = {
           // 请求成功的回调函数
           console.log("设置选项已保存！");
           console.log(datas.myObject);
-          alert("保存成功，现在可以使用查询功能了")
+          alert("保存成功，现在可以使用查询功能了");
         },
         error: function (error) {
           // 请求失败的回调函数
@@ -90,7 +90,7 @@ const App = {
   请填写您申请的令牌，申请地址：<a href="https://doc.topthink.com/think-api/APIdiaoyong.html" target="_blank">点击申请</a>
   <br/>
   
-  <div v-if="resule">
+  <div v-if="value">
   <h3>返回的数据</h3>
   {{value}}
   </div>

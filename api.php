@@ -83,13 +83,21 @@ function save_object_api_option_callback()
 }
 
 
-// 设置选项的值为一个对象
-$my_option = array(
-    'name' => 'John',
-    'age' => 30,
-    'email' => 'john@example.com'
-);
-//update_option('api_object_option', $my_option);
+// 注册插件激活时的回调函数
+register_activation_hook(__FILE__, 'my_plugin_activation_callback');
+
+// 插件激活时的回调函数
+function my_plugin_activation_callback()
+{
+    // 执行插件激活时需要的操作
+    // 例如创建数据库表、初始化设置、添加默认数据等
+
+    // 示例：创建一个选项并保存到数据库
+    $my_option = array(
+        'key' => '',
+    );
+    update_option('api_object_option', $my_option);
+}
 
 //加载接口
 require_once plugin_dir_path(__FILE__) . 'interface.php';
@@ -101,7 +109,7 @@ require_once plugin_dir_path(__FILE__) . 'vite.php';
 require_once plugin_dir_path(__FILE__) . 'templates.php';
 
 //设置按钮
-add_filter('plugin_action_links_'.plugin_basename(__FILE__), function($links){
-    $links[] = '<a href="'.get_admin_url(null, 'options-general.php?page=api_config') . '">' . __('设置','n') . '</a>';
+add_filter('plugin_action_links_' . plugin_basename(__FILE__), function ($links) {
+    $links[] = '<a href="' . get_admin_url(null, 'options-general.php?page=api_config') . '">' . __('设置', 'n') . '</a>';
     return $links;
 });
