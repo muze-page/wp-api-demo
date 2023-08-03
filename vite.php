@@ -1,6 +1,7 @@
 <?php
 //载入资源
 //加载 CSS 和 JS 资源
+add_action('wp_enqueue_scripts',  'load_admin_script');
 add_action('admin_enqueue_scripts',  'load_admin_script');
 function load_admin_script($hook)
 {
@@ -20,10 +21,10 @@ function load_admin_script($hook)
     wp_enqueue_script($name, $index_js, array(), $ver, true);
 
 
-   //$pf_api_translation_array = array(
-   //    //'ajaxurl' => admin_url('admin-ajax.php'),
-   //);
-   //wp_localize_script($name, 'dataLocal', $pf_api_translation_array); //传给vite项目
+   $array = array(
+       'ajaxurl' => admin_url('admin-ajax.php'),
+   );
+   wp_localize_script($name, 'dataLocal', $array); //传给vite项目
 
 }
 

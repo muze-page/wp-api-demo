@@ -12,13 +12,13 @@ const resule = ref("");
 
 //触发查询
 const queryDo = () => {
-  console.log(ajaxurl);
+  console.log(dataLocal.ajaxurl);
   const params = new URLSearchParams();
   params.append("action", "get_xh_callback");
   params.append("word", queryContent.value);
 
   axios
-    .post(ajaxurl, params)
+    .post(dataLocal.ajaxurl, params)
     .then(function (response) {
       // 请求成功的回调函数
       console.log("数据已获取");
