@@ -60,7 +60,7 @@ add_action('admin_enqueue_scripts', 'load_admin_script_api');
 
 
 // 添加Ajax请求处理函数
-add_action('wp_ajax_save_object_api_option', 'save_object_api_option_callback');
+add_action('wp_ajax_save_object_api_option_callback', 'save_object_api_option_callback');
 
 function save_object_api_option_callback()
 {

@@ -19,7 +19,7 @@ const App = {
         url: ajaxurl, // WordPress提供的全局变量，指向admin-ajax.php文件
         type: "POST",
         data: {
-          action: "save_object_api_option", // 自定义的Ajax处理函数名称
+          action: "save_object_api_option_callback", // 自定义的Ajax处理函数名称
           object_data: JSON.stringify(datas.myObject), // 将对象转换为 JSON 字符串
         },
         success: function (response) {
