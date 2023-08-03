@@ -37,6 +37,7 @@ function api_displays()
 
 ?>
     <div class="wrap">
+        <h1>API 测试</h1>
         <script src="https://unpkg.com/vue@3.3.4"></script>
         <div id="api"></div>
         <div id="apps"></div>
@@ -98,3 +99,9 @@ require_once plugin_dir_path(__FILE__) . 'vite.php';
 
 //加载页面模版
 require_once plugin_dir_path(__FILE__) . 'templates.php';
+
+//设置按钮
+add_filter('plugin_action_links_'.plugin_basename(__FILE__), function($links){
+    $links[] = '<a href="'.get_admin_url(null, 'options-general.php?page=api_config') . '">' . __('设置','n') . '</a>';
+    return $links;
+});
