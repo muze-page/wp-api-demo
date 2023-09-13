@@ -103,10 +103,9 @@ function my_plugin_activation_callback()
 require_once plugin_dir_path(__FILE__) . 'interface.php';
 
 //加载打包文件
-require_once plugin_dir_path(__FILE__) . 'vite.php';
+//require_once plugin_dir_path(__FILE__) . 'vite.php';
 
-//加载页面模版
-require_once plugin_dir_path(__FILE__) . 'templates.php';
+
 
 //设置按钮
 add_filter('plugin_action_links_' . plugin_basename(__FILE__), function ($links) {

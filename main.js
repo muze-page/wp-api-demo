@@ -89,18 +89,19 @@ const App = {
 <br/>
   请填写您申请的令牌，申请地址：<a href="https://doc.topthink.com/think-api/APIdiaoyong.html" target="_blank">点击申请</a>
   <br/>
+
   
+  <hr/><button class="button button-primary" @click="postData">保存选项</button>
+
+
+
+  <br/>查字：<input type="text" v-model="datas.myObject.query">
+  <hr/><button class="button button-primary" @click="getTest">测试获取</button>
+  <hr/><button class="button button-primary" @click="getXh">查询</button>
   <div v-if="value">
   <h3>返回的数据</h3>
   {{value}}
   </div>
-  
-  <!--
-  查字：<input type="text" v-model="datas.myObject.query">
-  <hr/><button class="button button-primary" @click="getTest">测试获取</button>
-  <hr/><button class="button button-primary" @click="getXh">查询</button>
-  -->
-  <hr/><button class="button button-primary" @click="postData">保存选项</button>
   
 
   `,

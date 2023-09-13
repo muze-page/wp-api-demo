@@ -45,20 +45,17 @@ function get_test_callback()
 {
 
     $url = 'https://rouse.npc.ink/wp-content/uploads/test.php';
-    $data = [
-        'word' => $_POST['word']
-    ];
-    $data = wp_json_encode($data);
+   
 
     $options = [
-        //'body' => $data,
-        //'headers' => [
-        //    'Content-Type' => 'application/json',
-        //    'Authorization' => 'AppCode ' . $_POST['authorization']
-        //]
+        'body' => '',
+        'headers' => [
+            'Content-Type' => 'application/json',
+           
+        ]
     ];
     // 发起请求
-    $response = wp_remote_post($url, $options);
+    $response = wp_remote_get($url, $options);
 
     if (!is_wp_error($response) && $response['response']['code'] === 200) {
         $content = json_decode($response['body'], true);
