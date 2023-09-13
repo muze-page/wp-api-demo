@@ -30,7 +30,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
     // 设置响应头部为 JSON，并允许跨域请求
     header('Content-Type: application/json');
-    header('Access-Control-Allow-Origin: http://localhost:10004'); // 请根据实际情况修改来源
+    //header('Access-Control-Allow-Origin: http://localhost:10004'); // 请根据实际情况修改来源
+    header('Access-Control-Allow-Origin: *');
 
     // 发送响应数据
     echo $json_response;
