@@ -92,19 +92,58 @@ const App = {
 
   
   <hr/><button class="button button-primary" @click="postData">保存选项</button>
-
-
-
-  <br/>查字：<input type="text" v-model="datas.myObject.query">
   <hr/><button class="button button-primary" @click="getTest">测试获取</button>
+
+
+  <hr/>查字：<input type="text" v-model="datas.myObject.query">
+ 
   <hr/><button class="button button-primary" @click="getXh">查询</button>
   <div v-if="value">
   <h3>返回的数据</h3>
   {{value}}
-  </div>
-  
+  <ul>
+  <li>
+  代码：{{value.code}}
+  </li>
+  <li>
+  信息  ：{{value.message}}
+  </li>
+  <li>
+  ID ：{{value.data.id}}
+  </li>
 
+  <li >
+  查询的字 ：{{value.data.zi}}
+  </li>
+  <li >
+  拼音 ：{{value.data.py}}
+  </li>
+  <li >
+  读音：{{value.data.pinyin}}
+  </li>
+  <li >
+  五笔：{{value.data.wubi}}
+  </li>
+  <li >
+  部首：{{value.data.bushou}}
+  </li>
+  <li >
+  笔画数：{{value.data.bihua}}
+  </li>
+  <li >
+  简解：{{value.data.jijie}}
+  </li>
+  <li >
+  详解：{{value.data.xiangjie}}
+  </li>
+
+  </ul>
+
+  </div>
   `,
 };
 
 Vue.createApp(App).mount("#api");
+
+
+
