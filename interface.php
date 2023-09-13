@@ -1,8 +1,6 @@
 <?php
 
 //注册动作
-//add_action( 'wp_ajax_nopriv_get_xh', 'get_xh_callback' );
-//add_action( 'wp_ajax_get_xh', 'get_xh_callback' );
 
 add_action('wp_ajax_nopriv_get_xh_callback', 'get_xh_callback');
 add_action('wp_ajax_get_xh_callback', 'get_xh_callback');
